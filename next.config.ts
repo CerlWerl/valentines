@@ -2,8 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig = {
   images: {
-    formats: ['image/avif', 'image/webp'], // <--- THIS LINE IS REQUIRED
+    formats: ['image/avif', 'image/webp'],
+    unoptimized: true // <--- THIS LINE IS REQUIRED
   },
+  output: 'export'
 }
 
-module.exports = nextConfig;
+export default nextConfig;
