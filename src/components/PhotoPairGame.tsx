@@ -145,6 +145,17 @@ export default function PhotoPairGame({
                 <div className="w-full h-full bg-red-500 rounded-sm lg:rounded-md"></div>
               </motion.div>
             )}
+            {/* Correct animation */}
+            {matched.includes(index) && (
+              <motion.div
+                className="absolute inset-0"
+                initial={{ opacity: 0 }} 
+                animate={{ scale: [1, 1.1, 1], opacity: [0, 1, 0, 1, 0] }}
+                transition={{ duration: 0.7, delay: 0.5 }} 
+              >
+                <div className="w-full h-full bg-green-600 rounded-sm lg:rounded-md"></div>
+              </motion.div>
+            )}
           </motion.div>
         ) : (
           <div key={i} className="w-[11vh] h-[11vh] lg:w-20 lg:h-20" />

@@ -69,9 +69,17 @@ export default function ValentinesProposal() {
       const timer = setTimeout(() => {
         setStep((prevStep) => prevStep + 1);
       }, 5000);
-
       return () => clearTimeout(timer);
     }
+    if (step === 3) {
+      const timer = setTimeout(() => {
+        setStep((prev) => prev + 1);
+      }, 10000); // Wait 4 seconds for the jumping hamster before showing text
+      return () => {clearTimeout(timer); 
+        setShowFireworks(false);
+      } ;
+    }
+
   }, [step]);
 
   const handleYesClick = () => {
@@ -91,7 +99,7 @@ export default function ValentinesProposal() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            Congratulations! You have completed the game.
+            You did it!
           </motion.h2>
         )}
         {step === 1 && (
@@ -103,7 +111,7 @@ export default function ValentinesProposal() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            I have a surprise for you!
+            I have a question for you pookie...
           </motion.h2>
         )}
         {step === 2 && (
@@ -145,7 +153,7 @@ export default function ValentinesProposal() {
                 className="px-6 py-2 text-lg font-semibold text-white bg-gradient-to-r from-pink-500 to-rose-500 rounded-xl hover:from-pink-600 hover:to-rose-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
                 onClick={handleYesClick}
               >
-                Yes, I will! 🥰
+                Yes, I will! 
               </button>
               <button
                 className="px-6 py-2 text-lg font-semibold text-white bg-gradient-to-r from-gray-500 to-gray-600 rounded-xl hover:from-gray-600 hover:to-gray-700 transform hover:scale-95 transition-all duration-300 shadow-lg"
@@ -161,7 +169,7 @@ export default function ValentinesProposal() {
                 onMouseEnter={() => setPosition(getRandomPosition())}
                 onClick={() => setPosition(getRandomPosition())}
               >
-                No, I won&apos;t 😢
+                Nuh uh 
               </button>
             </div>
           </motion.div>
@@ -175,8 +183,8 @@ export default function ValentinesProposal() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            Thank you for accepting, I love you! 💕
-            <p className="text-sm mt-4">For more information, write me!!! 💌</p>
+            Yipeee!
+
             <Image
               src="/hamster_jumping.gif"
               alt="Hamster Feliz"
@@ -186,6 +194,36 @@ export default function ValentinesProposal() {
             />
           </motion.div>
         )}
+        {step === 4 && (
+        <motion.div
+          key="step-4"
+          className={`max-w-2xl px-8 text-center text-xl md:text-2xl leading-relaxed font-medium ${playfairDisplay.className}`}
+          transition={{ duration: 1.5 }} // Slower fade-in for reading
+          initial={{ opacity: 0, y: 20 }} // Slight slide-up effect
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0 }}
+        >
+          <p className="mb-6">
+            My Nina, 
+          </p>
+          <p className="mb-6">
+            Sometimes I can't believe the thoughts that I have about you, I imagine doing absolutely everything with you. 
+            Whether that's living together and decorating our place together, or just playing all of my video games and board 
+            games with you. 
+          </p>
+          <p className="mb-6">
+            I feel so incredibly lucky that I found someone who I get to have those thoughts about. You make me laugh
+            and smile everytime I'm with you, I don't think I'll ever stop loving your goofy energy. And on top of all that you're just so beautiful,
+            and you make me feel that way too :). 
+
+            I love you to the moon and back, and I'm so glad you're my person! 
+
+          </p>
+          <p>
+            Love, Cole ❤️
+          </p>
+        </motion.div>
+      )}
       </AnimatePresence>
 
       {showFireworks && (

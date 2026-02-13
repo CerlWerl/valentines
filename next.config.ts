@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  // Your Next.js config
-};
+const nextConfig = {
+  images: {
+    formats: ['image/avif', 'image/webp'], // <--- THIS LINE IS REQUIRED
+  },
+}
 
-export default nextConfig;
+module.exports = nextConfig;
