@@ -12,12 +12,12 @@ export default function TextFooter() {
       {/* Left Text */}
       <div className="absolute left-10 bottom-5 transform">
       <h1
-        className={`text-white text-4xl lg:text-5xl font-bold leading-tight ${playfairDisplay.className}`}
+        className={`text-white text-2xl lg:text-5xl font-bold leading-tight ${playfairDisplay.className}`}
       >
         <span className="text-gray-400">Match</span> <br /> the photo pairs
       </h1>
       <h1
-      className={` text-white text-4xl lg:text-5xl font-bold leading-tight ${playfairDisplay.className}`}
+      className={` text-white text-2xl lg:text-5xl font-bold leading-tight ${playfairDisplay.className}`}
       >
         to reveal <br /> <span className="text-gray-400">the surprise</span>
       </h1>
@@ -25,7 +25,7 @@ export default function TextFooter() {
       {/* Right Text */}
       <div className="absolute right-10 bottom-5 transform ">
         <h1
-          className={`  text-white text-4xl lg:text-5xl font-bold leading-tight text-right ${playfairDisplay.className}`}
+          className={`  text-white text-2xl lg:text-5xl font-bold leading-tight text-right ${playfairDisplay.className}`}
         >
           Good luck <br /> <span className="text-gray-400">Babuh!</span>
         </h1>
